@@ -21,7 +21,13 @@ public final class Main {
 			String name = ln.next();
 			name = name.substring(0, name.length()-1);
 
-			output.printf("@attribute\t%s\t%s%n", name, line == null ? "integer" : "numeric");
+			if(line == null){
+				output.printf("@attribute\t%s\t%s%n", name, "numeric");
+			}
+			else{
+				output.printf("@attribute	class	{0,1}");
+			}
+			
 		}
 
 		attributeDescriptors.close();
